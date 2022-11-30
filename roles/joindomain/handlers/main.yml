@@ -1,0 +1,19 @@
+- name: Install pexpect 3.3
+  command: python setup.py install chdir=/root/pexpect-3.3
+
+- name: restart sssd
+  systemd:
+    name: sssd
+    state: restarted
+    enabled: yes
+
+- name: restart samba related services
+  service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: yes
+  with_items:
+    - smb
+    - winbind
+    - messagebus
+    - oddjobd

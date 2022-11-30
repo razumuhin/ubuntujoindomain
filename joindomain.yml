@@ -1,0 +1,21 @@
+---
+- name: "Ubuntu sunuculari AD Domain'e ekle"
+  become: yes
+  hosts: 
+    ## host adi
+    #- All
+    #- host1
+    #- host2
+
+  vars_prompt:
+    - name: joinUser
+      prompt: a domain authorized user name 
+      private: no 
+    - name: domainName
+      prompt: domain name
+      default: "xyz.com.tr" #domain name 
+      private: no
+    - name: joinUserPass
+      prompt: a domain authorized user password
+  roles:
+    - joindomain

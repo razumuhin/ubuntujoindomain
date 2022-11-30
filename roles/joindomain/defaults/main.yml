@@ -1,0 +1,18 @@
+package:
+  - sssd
+  - sssd-tools
+  - libnss-sss
+  - libpam-sss
+  - realmd 
+  - oddjob 
+  - oddjob-mkhomedir 
+  - adcli 
+  - samba-common 
+  - samba-common-bin 
+  - packagekit
+  # - python-pexpect
+  # - python3-pexpect
+joinUser: 
+domainName:
+joinUserPass: 
+domainGroupName: #domain grup name required
